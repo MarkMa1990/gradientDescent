@@ -10,14 +10,14 @@ xx0,yy0 = np.meshgrid(x0,y0)
 print (xx0)
 print (yy0)
 
-z0 = -np.sqrt(10.0 - xx0**3.0 - yy0**2.0)
+z0 = -np.sqrt(16.0 - xx0**3.0 - yy0**2.0)
 
 def pz_x(x,y):
-    return 1.5*x**2.0/np.sqrt(10.0-x**3.0-y**2.0)
-    #return x/np.sqrt(10.0-x**2.0-y**2.0)
+    return 1.5*x**2.0/np.sqrt(16.0-x**3.0-y**2.0)
+    #return x/np.sqrt(16.0-x**2.0-y**2.0)
 
 def pz_y(x,y):
-    return y/np.sqrt(10.0-x**2.0-y**2.0)
+    return y/np.sqrt(16.0-x**2.0-y**2.0)
 
 # x_0,y_0
 x_0 = 1.0
@@ -86,15 +86,17 @@ for i0 in range(N):
     
         print ("\tgamma: ",gamma_cal)
         
-    if  gamma_cal > 1e3:
-        print ("----------------------gamma={} exceeds threshold: 1000.".format(gamma_cal))
-        break
-    
+    #----
+  
     print ("\tcoordinates: ({},{})".format(x_cal,y_cal))
-    print ("\tz: {}".format(-np.sqrt(10.0-x_cal**3.0-y_cal**2.0)))
+    print ("\tz: {}".format(-np.sqrt(16.0-x_cal**3.0-y_cal**2.0)))
     
     xx = np.append(xx,x_cal)
     yy = np.append(yy,y_cal)
+    
+    if  gamma_cal > 1e3:
+        print ("----------------------gamma={} exceeds threshold: 1000.".format(gamma_cal))
+        break
     
 import matplotlib.pyplot as plt
 import matplotlib as mpl
