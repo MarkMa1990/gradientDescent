@@ -94,7 +94,7 @@ for i0 in range(N):
     xx = np.append(xx,x_cal)
     yy = np.append(yy,y_cal)
     
-    if  gamma_cal > 1e3:
+    if  i0 > 0 and BB < 1e-20 and gamma_cal > 1e3:
         print ("----------------------gamma={} exceeds threshold: 1000.".format(gamma_cal))
         break
     
