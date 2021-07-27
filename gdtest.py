@@ -20,7 +20,7 @@ def pz_y(x,y):
     return y/np.sqrt(16.0-x**2.0-y**2.0)
 
 # x_0,y_0
-x_0 = 1.0
+x_0 = 1.9
 y_0 = -1.91
 
 gamma_0 = 1e-4
@@ -105,6 +105,6 @@ plt.figure(0)
 plt.imshow(z0,extent=[-N0,N0,N0,-N0],cmap=mpl.cm.jet)
 plt.colorbar()
 plt.contour(xx0,yy0,z0,colors='k',levels=20)
-plt.plot(xx,yy,'r.-')
+plt.plot(xx,yy,'w.-')
 #plt.colorbar()
 plt.show()
